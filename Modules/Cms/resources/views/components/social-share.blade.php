@@ -25,7 +25,7 @@
         </a>
         <a title="{{ trans('cms::messages.share.networks.linkedin') }}" style="background-color: #0077B5; color: white" class="cursor-pointer px-4 py-2 rounded-lg flex justify-center gap-2" data-id="in">
             <div class="flex flex-col justify-center items-center">
-                <x-icon name="bxl-linkedIn" class="w-5 h-5" />
+                <x-icon name="bxl-linkedin" class="w-5 h-5" />
             </div>
         </a>
         <a title="{{ trans('cms::messages.share.networks.telegram') }}" style="background-color: #24A1DE; color: white" class="cursor-pointer px-4 py-2 rounded-lg flex justify-center gap-2" data-id="tg">
