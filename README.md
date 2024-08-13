@@ -1,4 +1,4 @@
-![Screenshot](https://raw.githubusercontent.com/tomatophp/filament-accounts/master/arts/screenshot.png)
+![Screenshot](https://raw.githubusercontent.com/3x1io/3x1.io/master/arts/screenshot.png)
 
 # 3x1.io Website Script
 
