@@ -1,7 +1,7 @@
 @extends('cms::layouts.app')
 
-@section('title', "Open Source")
-@section('description', "Open Source For everyone")
+@section('title', trans('cms::messages.open-source.label'))
+@section('description', trans('cms::messages.open-source.title') . ' ' . trans('cms::messages.open-source.sub'))
 
 @section('body')
     <div class="bg-slate-50 dark:bg-inherit min-h-screen">

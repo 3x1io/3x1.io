@@ -10,24 +10,29 @@ return [
         ]
     ],
     "blog" => [
+        "label" => "Blog",
         "title" => "Let's Learn",
         "sub" => "Together",
     ],
     "contact" => [
+        "label" => "Contact",
         "title" => "Contact Me",
         "time" => "I value my time, so make it worth it, and",
         "succinct" => "keep it succinct",
         "support" => "For open-source-related queries, use the package GitHub issues or the discord support channel"
     ],
     "services" => [
+        "label" => "Services",
         "title" => "How Can I Serve",
         "sub" => "You?",
     ],
     "open-source" => [
+        "label" => "Open Source",
         "title" => "Open Source For",
         "sub" => "everyone"
     ],
     "portfolio" => [
+        "label" => "Portfolio",
         "title" => "We Build it For",
         "sub" => "Businesses"
     ],

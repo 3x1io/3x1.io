@@ -1,5 +1,9 @@
 @extends('cms::layouts.app')
 
+@section('title', trans('cms::messages.portfolio.label'))
+@section('description', trans('cms::messages.portfolio.title') . ' ' . trans('cms::messages.portfolio.sub'))
+
+
 @section('body')
     <div class="bg-slate-50 dark:bg-inherit min-h-screen">
         <section class="container sm:px-6 py-12 sm:py-16 lg:py-20 mx-auto">
