@@ -6,14 +6,14 @@
     import {getMessaging, onMessage, getToken} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-messaging.js";
 
     const firebaseConfig = {
-        apiKey: "{{ config('filament-fcm.project.apiKey') }}",
-        authDomain: "{{ config('filament-fcm.project.authDomain') }}",
-        databaseURL: "{{ config('filament-fcm.project.databaseURL') }}",
-        projectId: "{{ config('filament-fcm.project.projectId') }}",
-        storageBucket: "{{ config('filament-fcm.project.storageBucket') }}",
-        messagingSenderId: "{{ config('filament-fcm.project.messagingSenderId') }}",
-        appId: "{{ config('filament-fcm.project.appId') }}",
-        measurementId: "{{ config('filament-fcm.project.measurementId') }}",
+        apiKey: "{{ $config['apiKey'] }}",
+        authDomain: "{{ $config['authDomain'] }}",
+        databaseURL: "{{ $config['databaseURL'] }}",
+        projectId: "{{ $config['projectId'] }}",
+        storageBucket: "{{ $config['storageBucket'] }}",
+        messagingSenderId: "{{ $config['messagingSenderId'] }}",
+        appId: "{{ $config['appId'] }}",
+        measurementId: "{{ $config['measurementId'] }}",
     };
     const app = initializeApp(firebaseConfig);
     const messaging = getMessaging(app);
@@ -24,7 +24,7 @@
                     .register("/firebase-messaging-sw.js");
             }
             navigator.serviceWorker.getRegistration().then(async (reg) => {
-                let token = await getToken(messaging, {vapidKey: "{{ config('filament-fcm.vapid') }}"});
+                let token = await getToken(messaging, {vapidKey: "{{ $config['vapid'] }}"});
                 if(token){
                     Livewire.dispatch('fcm-token', {token: token})
                 }
