@@ -1,6 +1,6 @@
 @extends('cms::layouts.app')
 
-@section('title', app()->getLocale() === 'en' ? str(setting('site_name'))->explode('|')[0]??setting('site_name') : str(setting('site_name'))->explode('|')[1]??setting('site_name') . ' | '. $service->title)
+@section('title', (app()->getLocale() === 'en' ? str(setting('site_name'))->explode('|')[0]??setting('site_name') : str(setting('site_name'))->explode('|')[1]??setting('site_name')) . ' | '. $service->title)
 @section('description', $service->short_description)
 @section('keywords', $service->keywords)
 @if($service->getFirstMediaUrl('feature_image'))

@@ -1,6 +1,6 @@
 @extends('cms::layouts.app')
 
-@section('title', app()->getLocale() === 'en' ? str(setting('site_name'))->explode('|')[0]??setting('site_name') : str(setting('site_name'))->explode('|')[1]??setting('site_name') . ' | '. trans('cms::messages.blog.label'))
+@section('title', (app()->getLocale() === 'en' ? str(setting('site_name'))->explode('|')[0]??setting('site_name') : str(setting('site_name'))->explode('|')[1]??setting('site_name')) . ' | '. trans('cms::messages.blog.label'))
 @section('description', trans('cms::messages.blog.title') . ' ' . trans('cms::messages.blog.sub'))
 
 @section('body')

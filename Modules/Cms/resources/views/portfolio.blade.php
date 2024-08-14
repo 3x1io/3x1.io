@@ -1,6 +1,6 @@
 @extends('cms::layouts.app')
 
-@section('title', app()->getLocale() === 'en' ? str(setting('site_name'))->explode('|')[0]??setting('site_name') : str(setting('site_name'))->explode('|')[1]??setting('site_name') . ' | '. $portfolio->title)
+@section('title', (app()->getLocale() === 'en' ? str(setting('site_name'))->explode('|')[0]??setting('site_name') : str(setting('site_name'))->explode('|')[1]??setting('site_name')) . ' | '. $portfolio->title)
 @section('description', $portfolio->short_description)
 @section('keywords', $portfolio->keywords)
 @if($portfolio->getFirstMediaUrl('feature_image'))
