@@ -69,7 +69,7 @@
     @stack('js')
 
     <script type="module">
-        if(window.localStorage.getItem('theme') === 'dark') {
+        if(window.localStorage.getItem('theme') && window.localStorage.getItem('theme') === 'dark') {
             document.querySelector('html').classList.add('dark');
             document.querySelector('html').classList.remove('light');
             document.querySelector('.dark-mode-sun').classList.remove('hidden');
@@ -84,16 +84,19 @@
                     document.querySelector('html').classList.add('light');
                     document.querySelector('.dark-mode-moon').classList.remove('hidden');
                     document.querySelector('.dark-mode-sun').classList.add('hidden');
+
+                    window.localStorage.setItem('theme', 'dark');
                 }
                 else {
                     document.querySelector('html').classList.remove('light');
                     document.querySelector('html').classList.add('dark');
                     document.querySelector('.dark-mode-sun').classList.remove('hidden');
                     document.querySelector('.dark-mode-moon').classList.add('hidden');
+
+                    window.localStorage.setItem('theme', 'light');
                 }
 
             });
-
         }
         document.querySelector('button[aria-label="Switch Theme"]').addEventListener('click', function() {
             if(document.querySelector('html').classList.contains('dark')) {
