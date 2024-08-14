@@ -5,7 +5,7 @@
         <div class="flex md:h-screen max-w-6xl mx-auto px-4 sm:px-6 md:-mt-20" >
             <div class="m-auto py-12 md:py-20" >
                 <div class="text-center pb-10 md:pb-16" >
-                    <img src="{{ asset('images/fady.jpeg') }}" class="mx-auto m-8 rounded-full" width="144" height="144" >
+                    <img src="{{ asset('images/fady.webp') }}" class="mx-auto m-8 rounded-full" width="144" height="144" >
                     <h1 class="ml6">
                       <span class="text-wrapper">
                         <span class="letters">{{ trans('cms::messages.index.title') }}</span>
