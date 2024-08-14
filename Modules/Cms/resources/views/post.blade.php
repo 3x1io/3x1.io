@@ -3,6 +3,9 @@
 @section('title', $post->title)
 @section('description', $post->short_description)
 @section('keywords', $post->keywords)
+@if($post->getFirstMediaUrl('feature_image'))
+    @section('image', $post->getFirstMediaUrl('feature_image'))
+@endif
 
 @section('body')
     <div class="bg-slate-50 dark:bg-inherit min-h-screen">

@@ -4,6 +4,10 @@
 @section('description', $docs->short_description)
 @section('keywords', $docs->keywords)
 
+@if($docs->getFirstMediaUrl('feature_image'))
+    @section('image', $docs->getFirstMediaUrl('feature_image'))
+@endif
+
 @section('body')
     <div class="bg-slate-50 dark:bg-inherit min-h-screen">
         <header class="flex flex-col items-center text-center px-4 sm:px-6 mb-4">

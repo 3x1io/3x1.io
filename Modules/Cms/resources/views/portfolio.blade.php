@@ -3,6 +3,9 @@
 @section('title', $portfolio->title)
 @section('description', $portfolio->short_description)
 @section('keywords', $portfolio->keywords)
+@if($portfolio->getFirstMediaUrl('feature_image'))
+    @section('image', $portfolio->getFirstMediaUrl('feature_image'))
+@endif
 
 @section('body')
     <div class="bg-slate-50 dark:bg-inherit min-h-screen">

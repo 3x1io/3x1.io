@@ -3,6 +3,9 @@
 @section('title', $service->title)
 @section('description', $service->short_description)
 @section('keywords', $service->keywords)
+@if($service->getFirstMediaUrl('feature_image'))
+    @section('image', $service->getFirstMediaUrl('feature_image'))
+@endif
 
 @section('body')
     <div class="bg-slate-50 dark:bg-inherit min-h-screen">
