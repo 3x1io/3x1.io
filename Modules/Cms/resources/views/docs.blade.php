@@ -2,13 +2,14 @@
 
 @section('title', $docs->title)
 @section('description', $docs->short_description)
+@section('keywords', $docs->keywords)
 
 @section('body')
     <div class="bg-slate-50 dark:bg-inherit min-h-screen">
         <header class="flex flex-col items-center text-center px-4 sm:px-6 mb-4">
             <img src="{{ $docs->getFirstMediaUrl('feature_image') }}" width="224" height="224" class="p-[20px] mb-3">
             <h1 class="text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-4 font-heading">
-                {{ $docs->title }}
+                {!! $docs->title !!}
             </h1>
             <h2 class="text-2xl md:text-3xl tracking-tight mb-8">
                 {!! $docs->short_description !!}

@@ -2,6 +2,7 @@
 
 @section('title', $portfolio->title)
 @section('description', $portfolio->short_description)
+@section('keywords', $portfolio->keywords)
 
 @section('body')
     <div class="bg-slate-50 dark:bg-inherit min-h-screen">

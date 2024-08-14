@@ -2,6 +2,7 @@
 
 @section('title', $service->title)
 @section('description', $service->short_description)
+@section('keywords', $service->keywords)
 
 @section('body')
     <div class="bg-slate-50 dark:bg-inherit min-h-screen">
@@ -12,7 +13,7 @@
                 </time>
             </p>
             <h1 class="px-4 sm:px-6 max-w-3xl mx-auto text-center text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-8 font-heading">
-                {{ $service->title }}
+                {!! $service->title !!}
             </h1>
             <h2 class="px-4 sm:px-6 mt-[-4px] max-w-3xl mx-auto text-center text-xl md:text-2xl opacity-80">
                 {!! $service->short_description !!}

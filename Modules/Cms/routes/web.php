@@ -19,7 +19,7 @@ Route::get('/', function (){
 })->middleware(['web'])->name('index');
 
 Route::prefix('ar')->middleware(['web',  \Modules\Cms\Http\Middlewares\LangRoute::class])->group(function(){
-    Route::name('home.')->group(function() {
+    Route::name('ar.home.')->group(function() {
         Route::get('/', [\Modules\Cms\Http\Controllers\HomeController::class, 'index'])->name('index');
         Route::get('/open-source', [\Modules\Cms\Http\Controllers\HomeController::class, 'openSource'])->name('open-source');
         Route::get('/open-source/{docs}', [\Modules\Cms\Http\Controllers\HomeController::class, 'docs'])->name('open-source-docs');
@@ -32,11 +32,12 @@ Route::prefix('ar')->middleware(['web',  \Modules\Cms\Http\Middlewares\LangRoute
         Route::get('/portfolios/{portfolio}', [\Modules\Cms\Http\Controllers\HomeController::class, 'portfolio'])->name('portfolio');
         Route::get('/services', [\Modules\Cms\Http\Controllers\HomeController::class, 'services'])->name('services');
         Route::get('/services/{service}', [\Modules\Cms\Http\Controllers\HomeController::class, 'service'])->name('service');
+        Route::get('/{page}', [\Modules\Cms\Http\Controllers\HomeController::class, 'page'])->name('page');
     });
 });
 
 Route::prefix('en')->middleware(['web',  \Modules\Cms\Http\Middlewares\LangRoute::class])->group(function(){
-    Route::name('home.')->group(function() {
+    Route::name('en.home.')->group(function() {
         Route::get('/', [\Modules\Cms\Http\Controllers\HomeController::class, 'index'])->name('index');
         Route::get('/open-source', [\Modules\Cms\Http\Controllers\HomeController::class, 'openSource'])->name('open-source');
         Route::get('/open-source/{docs}', [\Modules\Cms\Http\Controllers\HomeController::class, 'docs'])->name('open-source-docs');
@@ -49,5 +50,6 @@ Route::prefix('en')->middleware(['web',  \Modules\Cms\Http\Middlewares\LangRoute
         Route::get('/portfolios/{portfolio}', [\Modules\Cms\Http\Controllers\HomeController::class, 'portfolio'])->name('portfolio');
         Route::get('/services', [\Modules\Cms\Http\Controllers\HomeController::class, 'services'])->name('services');
         Route::get('/services/{service}', [\Modules\Cms\Http\Controllers\HomeController::class, 'service'])->name('service');
+        Route::get('/{page}', [\Modules\Cms\Http\Controllers\HomeController::class, 'page'])->name('page');
     });
 });

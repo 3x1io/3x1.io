@@ -10,7 +10,7 @@
     </div>
     <div class="flex flex-col justify-center my-3 rtl:ml-2 mr-2 sm:mt-[-1px]">
         <div class="mb-0.5 text-2xl sm:text-3xl font-bold">
-            {{ $label }}
+            {!! $label !!}
         </div>
         @if($description)
         <div class=" text-gray-700 dark:text-gray-200/90 text-lg sm:text-xl sm:leading-tight leading-tight">

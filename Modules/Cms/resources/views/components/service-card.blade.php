@@ -9,13 +9,13 @@
         >
             <x-icon name="heroicon-o-heart" class="w-12 h-12 text-main" />
 
-            <h2 class="mt-4 text-xl font-medium sm:text-2xl text-black dark:text-white">{{ $label }}</h2>
+            <h2 class="mt-4 text-xl font-medium sm:text-2xl text-black dark:text-white">{!! $label !!}</h2>
         </div>
 
         <div
             class="absolute p-4 opacity-0 transition-opacity group-hover:relative group-hover:opacity-100 sm:p-6 lg:p-8"
         >
-            <h3 class="mt-4 text-xl font-medium sm:text-2xl text-black dark:text-white">{{ $label }}</h3>
+            <h3 class="mt-4 text-xl font-medium sm:text-2xl text-black dark:text-white">{!! $label !!}</h3>
 
             <p class="mt-4 text-sm sm:text-base text-gray-400">
                 {!! $description !!}

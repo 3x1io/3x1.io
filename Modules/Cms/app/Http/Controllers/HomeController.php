@@ -123,6 +123,19 @@ class HomeController extends Controller
         return view('cms::contact');
     }
 
+    public function page($page)
+    {
+        $page = Post::query()->where('type', 'page')->where('slug', $page)->first();
+        if($page){
+            return view('cms::page', [
+                'page' => $page
+            ]);
+        }
+        else {
+            abort(404);
+        }
+    }
+
     public function send(Request $request)
     {
         dd($request);

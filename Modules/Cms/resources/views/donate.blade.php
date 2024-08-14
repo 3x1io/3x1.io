@@ -2,6 +2,7 @@
 
 @section('title', $page->title)
 @section('description', $page->short_description)
+@section('keywords', $page->keywords)
 
 @section('body')
     <div class="bg-slate-50 dark:bg-inherit min-h-screen">
