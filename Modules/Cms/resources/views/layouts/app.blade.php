@@ -53,6 +53,7 @@
     </style>
     @vite('resources/css/app.css')
     @stack('css')
+    @include('cms::parts.pwa')
 </head>
 <body class="antialiased text-gray-900 dark:text-slate-300 tracking-tight bg-white dark:bg-slate-950 ibm-plex-sans-arabic-medium">
     @include('cms::parts.header')
@@ -122,5 +123,7 @@
         };
 
     </script>
+
+    @include('cms::parts.fcm')
 </body>
 </html>
