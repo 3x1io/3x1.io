@@ -1,3 +1,4 @@
+<div></div>
 <script type="module">
     import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js'
     import {getMessaging, onMessage, getToken} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-messaging.js";
@@ -22,7 +23,7 @@
             }
             navigator.serviceWorker.getRegistration().then(async (reg) => {
                 let token = await getToken(messaging, {vapidKey: "{{ config('filament-fcm.vapid') }}"});
-
+                Livewire.dispatch('fcm-token', token)
 
                 onMessage(messaging, (payload) => {
                     Livewire.dispatch('fcm-notification', {data: payload})
