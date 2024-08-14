@@ -1,4 +1,4 @@
-<a href="{{ url(app()->getLocale() . '/'. $url) }}" class="flex mx-4 py-6 px-2 sm:p-6 bg-white dark:bg-black/20 sm:rounded-xl shadow-md dark:shadow-lg hover:shadow-xl dark:hover:sm:shadow-indigo-500/20 transition duration-500 dark:sm:border dark:border-slate-800">
+<a href="{{ url(app()->getLocale() . '/'. $url) }}" class="flex mx-4 py-6 px-2 sm:p-6 bg-white dark:bg-black/20 sm:rounded-xl shadow-md dark:shadow-lg hover:shadow-xl dark:hover:sm:shadow-indigo-500/20 transition duration-500 border-gray-200 dark:sm:border dark:border-slate-800">
     <div class="flex-initial flex-shrink-0 justify-center rtl:ml-2 rtl:sm:ml-3 mr-2 sm:mr-3">
         @if($image)
             <img src="{{ $image }}" width="128" height="128" class="rounded-lg">
@@ -9,7 +9,7 @@
         @endif
     </div>
     <div class="flex flex-col justify-center my-3 rtl:ml-2 mr-2 sm:mt-[-1px]">
-        <div class="mb-0.5 text-2xl sm:text-3xl font-bold">
+        <div class="mb-0.5 text-2xl sm:text-3xl font-bold text-black dark:text-gray-200">
             {!! $label !!}
         </div>
         @if($description)
