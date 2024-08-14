@@ -1,6 +1,6 @@
 @extends('cms::layouts.app')
 
-@section('title', trans('cms::messages.blog.label'))
+@section('title', setting('site_name') . ' | '. trans('cms::messages.blog.label'))
 @section('description', trans('cms::messages.blog.title') . ' ' . trans('cms::messages.blog.sub'))
 
 @section('body')

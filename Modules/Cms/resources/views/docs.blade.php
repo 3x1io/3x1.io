@@ -1,9 +1,8 @@
 @extends('cms::layouts.app')
 
-@section('title', $docs->title)
+@section('title', setting('site_name') . ' | '. $docs->title)
 @section('description', $docs->short_description)
 @section('keywords', $docs->keywords)
-
 @if($docs->getFirstMediaUrl('feature_image'))
     @section('image', $docs->getFirstMediaUrl('feature_image'))
 @endif

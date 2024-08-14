@@ -1,6 +1,6 @@
 @extends('cms::layouts.app')
 
-@section('title', $page->title)
+@section('title', setting('site_name') . ' | '.$page->title)
 @section('description', $page->short_description)
 @section('keywords', $page->keywords)
 @if($page->getFirstMediaUrl('feature_image'))

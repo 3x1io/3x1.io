@@ -1,6 +1,6 @@
 @extends('cms::layouts.app')
 
-@section('title', $portfolio->title)
+@section('title', setting('site_name') . ' | '. $portfolio->title)
 @section('description', $portfolio->short_description)
 @section('keywords', $portfolio->keywords)
 @if($portfolio->getFirstMediaUrl('feature_image'))

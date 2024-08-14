@@ -1,6 +1,6 @@
 @extends('cms::layouts.app')
 
-@section('title', $service->title)
+@section('title', setting('site_name') . ' | '. $service->title)
 @section('description', $service->short_description)
 @section('keywords', $service->keywords)
 @if($service->getFirstMediaUrl('feature_image'))

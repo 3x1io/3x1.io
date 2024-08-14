@@ -1,6 +1,6 @@
 @extends('cms::layouts.app')
 
-@section('title', trans('cms::messages.contact.label'))
+@section('title', setting('site_name') . ' | '. trans('cms::messages.contact.label'))
 @section('description', trans('cms::messages.contact.support'))
 
 @section('body')

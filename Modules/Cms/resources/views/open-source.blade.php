@@ -1,6 +1,6 @@
 @extends('cms::layouts.app')
 
-@section('title', trans('cms::messages.open-source.label'))
+@section('title', setting('site_name') . ' | '. trans('cms::messages.open-source.label'))
 @section('description', trans('cms::messages.open-source.title') . ' ' . trans('cms::messages.open-source.sub'))
 
 @section('body')
