@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use Detection\MobileDetect;
 use Filament\Notifications\Actions\Action;
+use Filament\Notifications\Notification;
 use Livewire\Attributes\On;
 use Livewire\Component;
 

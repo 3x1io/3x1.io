@@ -51,6 +51,7 @@
             font-style: normal;
         }
     </style>
+    @livewireStyles
     @filamentStyles
     @vite('resources/css/app.css')
     @stack('css')
@@ -125,6 +126,7 @@
 
     </script>
 
+    @livewireScripts
     @livewire(\App\Livewire\FcmToken::class)
 
     @livewire('notifications')
