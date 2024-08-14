@@ -75,6 +75,12 @@
             document.querySelector('.dark-mode-sun').classList.remove('hidden');
             document.querySelector('.dark-mode-moon').classList.add('hidden');
         }
+        else if(window.localStorage.getItem('theme') && window.localStorage.getItem('theme') === 'light'){
+            document.querySelector('html').classList.remove('dark');
+            document.querySelector('html').classList.add('light');
+            document.querySelector('.dark-mode-sun').classList.add('hidden');
+            document.querySelector('.dark-mode-moon').classList.remove('hidden');
+        }
         else {
             window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
                 const newColorScheme = event.matches ? "dark" : "light";
@@ -105,12 +111,17 @@
                 document.querySelector('html').classList.add('light');
                 document.querySelector('.dark-mode-moon').classList.remove('hidden');
                 document.querySelector('.dark-mode-sun').classList.add('hidden');
+
+                window.localStorage.setItem('theme', 'light');
+
             } else {
                 window.localStorage.setItem('theme', 'dark');
                 document.querySelector('html').classList.add('dark');
                 document.querySelector('html').classList.remove('light');
                 document.querySelector('.dark-mode-sun').classList.remove('hidden');
                 document.querySelector('.dark-mode-moon').classList.add('hidden');
+
+                window.localStorage.setItem('theme', 'dark');
             }
         });
 
