@@ -2,7 +2,7 @@
     <div class="flex flex-col justify-center items-center text-xl font-bold">
         {{ trans('cms::messages.share.title') }}
     </div>
-    <div class="mt-4 flex flex-wrap justify-center gap-4 mx-4">
+    <div class="mt-4 flex flex-wrap justify-center gap-4 mx-4 share-btn">
         <a title="{{ trans('cms::messages.share.networks.facebook') }}" style="background-color: #1e40af; color: white" class="cursor-pointer px-4 py-2 rounded-lg flex justify-center gap-2" data-id="fb">
             <div class="flex flex-col justify-center items-center">
                 <x-icon name="bxl-facebook" class="w-5 h-5" />
@@ -38,7 +38,12 @@
                 <x-icon name="bxl-whatsapp" class="w-5 h-5" />
             </div>
         </a>
+        <a title="{{ trans('cms::messages.share.networks.share') }}" class="bg-main cursor-pointer px-4 py-2 rounded-lg flex justify-center gap-2" data-id="share">
+            <div class="flex flex-col justify-center items-center">
+                <x-icon name="heroicon-s-share" class="w-5 h-5" />
+            </div>
+        </a>
     </div>
 </div>
 
-<script src="//cdn.jsdelivr.net/npm/share-buttons/dist/share-buttons.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/share-buttons/dist/share-buttons.js"></script>
