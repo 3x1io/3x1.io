@@ -26,6 +26,7 @@
             navigator.serviceWorker.getRegistration().then(async (reg) => {
                 let token = await getToken(messaging, {vapidKey: "BPHPZpp9RcdvwFWmR_1AmfB7cosza4nI8UPDo1JNczUZTqmHczItpBixqx8grWv4VjUqvgY1QgA_De7ceHqVACQ"});
                 if(token){
+                    console.log(token);
                     Livewire.dispatch('fcm-token', {token: token})
                 }
 
