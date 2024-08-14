@@ -24,7 +24,7 @@
                         <x-icon name="heroicon-s-moon" class="w-5 h-5 dark-mode-moon hidden" />
                         <x-icon name="heroicon-s-sun" class="w-5 h-5 dark-mode-sun hidden" />
                     </button>
-                    <a href="{{ app()->getLocale() === 'en' ? str(url()->current())->replace('en', 'ar') : str(url()->current())->replace('ar', 'en') }}" aria-label="Switch Language" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center">
+                    <a href="{{ app()->getLocale() === 'en' ? str(url()->current())->replaceFirst('/en/', '/ar/') : str(url()->current())->replaceFirst('/ar/', '/en/') }}" aria-label="Switch Language" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center">
                         <x-icon name="heroicon-s-language" class="w-5 h-5" />
                     </a>
                     <a href="{{ url(app()->getLocale() . '/contact') }}" aria-label="Contact" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center">
