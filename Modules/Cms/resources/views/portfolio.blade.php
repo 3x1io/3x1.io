@@ -13,7 +13,7 @@
                 </time>
             </p>
             <h1 class="px-4 sm:px-6 max-w-3xl mx-auto text-center text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-8 font-heading">
-                {{ $portfolio->title }}
+                {!! $portfolio->title !!}
             </h1>
             <h2 class="px-4 sm:px-6 mt-[-4px] max-w-3xl mx-auto text-center text-xl md:text-2xl opacity-80">
                 {!! $portfolio->short_description !!}

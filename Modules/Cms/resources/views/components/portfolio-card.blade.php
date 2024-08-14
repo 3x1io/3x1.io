@@ -7,7 +7,7 @@
             <h3>
                 <a href="{{ url(app()->getLocale() .'/'. $url) }}" title="{{ $label }}" aria-label="{{ $label }}" class="font-display text-xl">
                     <span aria-hidden="true" class="absolute inset-0"></span>
-                    {{ $label }}
+                    {!! $label !!}
                 </a>
             </h3>
         </div>
