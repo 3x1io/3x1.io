@@ -23,6 +23,7 @@ use TomatoPHP\FilamentAlerts\FilamentAlertsPlugin;
 use TomatoPHP\FilamentCms\FilamentCMSPlugin;
 use TomatoPHP\FilamentMenus\FilamentMenusPlugin;
 use TomatoPHP\FilamentPlugins\FilamentPluginsPlugin;
+use TomatoPHP\FilamentPWA\FilamentPWAPlugin;
 use TomatoPHP\FilamentSettingsHub\FilamentSettingsHubPlugin;
 use TomatoPHP\FilamentTranslations\FilamentTranslationsPlugin;
 use TomatoPHP\FilamentTranslations\FilamentTranslationsSwitcherPlugin;
@@ -95,6 +96,7 @@ class AdminPanelProvider extends PanelProvider
                 FilamentAlertsPlugin::make()
                     ->useSettingsHub(),
                 FilamentSettingsHubPlugin::make(),
+                FilamentPWAPlugin::make(),
             ]);
     }
 }
