@@ -2,6 +2,8 @@
 /node_modules
 /public/build
 /public/hot
+/public/firebase-messaging-sw.js
+/firebase-3x1.json
 /public/storage
 /storage/*.key
 /vendor
