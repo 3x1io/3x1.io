@@ -14,7 +14,7 @@
                     </span>
                 </h1>
             </header>
-            <section data-nosnippet="" class="mx-auto grid sm:gap-12 grid-cols-1 lg:grid-cols-3 sm:p-1 my-12 dark:text-white">
+            <section data-nosnippet="" class="mx-auto gap-4 grid sm:gap-12 grid-cols-1 lg:grid-cols-3 sm:p-1 my-12 dark:text-white">
                 @foreach($services as $item)
                     <x-cms-service-card
                         :tags="$item->categories()->pluck('name')->toArray()"

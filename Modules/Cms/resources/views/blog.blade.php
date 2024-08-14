@@ -14,7 +14,7 @@
                     </span>
                 </h1>
             </header>
-            <div class="px-6 sm:px-6  mx-auto max-w-xl">
+            <div class="px-6 sm:px-6 flex flex-col gap-4 mx-auto max-w-xl">
                 <ul>
                     @foreach ($posts as $item)
                         <x-cms-blog-card

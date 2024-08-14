@@ -14,7 +14,7 @@
                     </span>
                 </h1>
             </header>
-            <section data-nosnippet="" class="mx-auto grid sm:gap-12 grid-cols-1 lg:grid-cols-2 sm:p-1 my-12 dark:text-white">
+            <section data-nosnippet="" class="mx-auto grid gap-4 sm:gap-12 grid-cols-1 lg:grid-cols-2 sm:p-1 my-12 dark:text-white">
                 @foreach($openSources as $item)
                     <x-cms-open-source-card
                         :tags="$item->categories()->pluck('name')->toArray()"

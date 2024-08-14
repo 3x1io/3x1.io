@@ -1,4 +1,4 @@
-<a href="{{ url(app()->getLocale() . '/'. $url) }}" class="flex mx-4 py-6 px-2 sm:p-6 bg-white dark:bg-black/20 sm:rounded-xl shadow-md dark:shadow-lg hover:shadow-xl dark:hover:sm:shadow-indigo-500/20 transition duration-500 border-gray-200 dark:sm:border dark:border-slate-800">
+<a href="{{ url(app()->getLocale() . '/'. $url) }}" class="flex mx-4 p-6 bg-white dark:bg-black/20 rounded-lg shadow-sm dark:shadow-lg hover:shadow-xl dark:hover:sm:shadow-indigo-500/20 transition duration-500 border-gray-200 dark:sm:border dark:border-slate-800">
     <div class="flex-initial flex-shrink-0 justify-center rtl:ml-2 rtl:sm:ml-3 mr-2 sm:mr-3">
         @if($image)
             <img src="{{ $image }}" width="128" height="128" class="rounded-lg">
