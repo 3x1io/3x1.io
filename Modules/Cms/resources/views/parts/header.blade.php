@@ -8,9 +8,9 @@
             </a>
             <div class="flex items-center md:hidden">
                 <div class="items-center md:flex">
-                    <button aria-label="Switch Theme" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center">
-                        <x-icon name="heroicon-s-moon" class="w-5 h-5 dark-mode-moon hidden" />
-                        <x-icon name="heroicon-s-sun" class="w-5 h-5 dark-mode-sun" />
+                    <button aria-label="Switch Theme" id="theme-mode-min" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center">
+                        <x-icon name="heroicon-s-moon" class="w-5 h-5 hidden" id="dark-mode-moon-min" />
+                        <x-icon name="heroicon-s-sun" class="w-5 h-5" id="dark-mode-sun-min" />
                     </button>
                     <a href="{{ app()->getLocale() === 'en' ? str(url()->current())->replaceFirst('/en/', '/ar/') : str(url()->current())->replaceFirst('/ar/', '/en/') }}" aria-label="Switch Language" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center">
                         <x-icon name="heroicon-s-language" class="w-5 h-5" />
@@ -38,9 +38,9 @@
             </ul>
             <div class="md:self-center flex items-center mb-4 md:mb-0 ml-2">
                 <div class="hidden items-center md:flex">
-                    <button aria-label="Switch Theme" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center">
-                        <x-icon name="heroicon-s-moon" class="w-5 h-5 dark-mode-moon hidden" />
-                        <x-icon name="heroicon-s-sun" class="w-5 h-5 dark-mode-sun" />
+                    <button aria-label="Switch Theme" id="theme-mode" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center">
+                        <x-icon name="heroicon-s-moon" class="w-5 h-5 hidden" id="dark-mode-moon" />
+                        <x-icon name="heroicon-s-sun" class="w-5 h-5" id="dark-mode-sun" />
                     </button>
                     <a href="{{ app()->getLocale() === 'en' ? str(url()->current())->replaceFirst('/en/', '/ar/') : str(url()->current())->replaceFirst('/ar/', '/en/') }}" aria-label="Switch Language" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center">
                         <x-icon name="heroicon-s-language" class="w-5 h-5" />
@@ -58,3 +58,62 @@
         </nav>
     </div>
 </header>
+
+<script>
+    document.getElementById('theme-mode-min').addEventListener('click', () => {
+        if(document.querySelector('html').classList.contains('dark')) {
+            swatchTheme('light');
+        } else {
+            swatchTheme('dark');
+        }
+    });
+    document.getElementById('theme-mode').addEventListener('click', () => {
+        if(document.querySelector('html').classList.contains('dark')) {
+            swatchTheme('light');
+        } else {
+            swatchTheme('dark');
+        }
+    });
+
+    function swatchTheme(mode=null){
+        if(mode === 'light') {
+            document.querySelector('html').classList.remove('dark');
+            document.querySelector('html').classList.add('light');
+            document.querySelector('#dark-mode-sun').classList.add('hidden');
+            document.querySelector('#dark-mode-moon').classList.remove('hidden');
+            document.querySelector('#dark-mode-sun-min').classList.add('hidden');
+            document.querySelector('#dark-mode-moon-min').classList.remove('hidden');
+
+            window.localStorage.setItem('theme', 'light');
+        } else {
+            document.querySelector('html').classList.add('dark');
+            document.querySelector('html').classList.remove('light');
+            document.querySelector('#dark-mode-moon').classList.add('hidden');
+            document.querySelector('#dark-mode-sun').classList.remove('hidden');
+            document.querySelector('#dark-mode-moon-min').classList.add('hidden');
+            document.querySelector('#dark-mode-sun-min').classList.remove('hidden');
+
+            window.localStorage.setItem('theme', 'dark');
+        }
+    }
+
+    if(window.localStorage.getItem('theme') === 'dark') {
+        swatchTheme('dark');
+    }
+    else if(window.localStorage.getItem('theme') === 'light'){
+        swatchTheme('light');
+    }
+    else {
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            const newColorScheme = event.matches ? "dark" : "light";
+
+            if(newColorScheme === 'dark'){
+                swatchTheme('dark');
+            }
+            else {
+                swatchTheme('light');
+            }
+
+        });
+    }
+</script>
