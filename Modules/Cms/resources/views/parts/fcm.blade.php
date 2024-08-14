@@ -22,7 +22,6 @@
             }
             navigator.serviceWorker.getRegistration().then(async (reg) => {
                 let token = await getToken(messaging, {vapidKey: "{{ config('filament-fcm.vapid') }}"});
-                Livewire.dispatch('fcm-token', { token: token });
 
 
                 onMessage(messaging, (payload) => {
