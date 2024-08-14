@@ -6,14 +6,14 @@
     import {getMessaging, onMessage, getToken} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-messaging.js";
 
     const firebaseConfig = {
-        apiKey: "{{ $config['apiKey'] }}",
-        authDomain: "{{ $config['authDomain'] }}",
-        databaseURL: "{{ $config['databaseURL'] }}",
-        projectId: "{{ $config['projectId'] }}",
-        storageBucket: "{{ $config['storageBucket'] }}",
-        messagingSenderId: "{{ $config['messagingSenderId'] }}",
-        appId: "{{ $config['appId'] }}",
-        measurementId: "{{ $config['measurementId'] }}",
+        apiKey: "AIzaSyBHM0qQcP5p47u7eTKnKCnyzNP6d1eQslQ",
+        authDomain: "x1io-309101.firebaseapp.com",
+        databaseURL: "https://x1io-309101-default-rtdb.firebaseio.com",
+        projectId: "x1io-309101",
+        storageBucket: "x1io-309101.appspot.com",
+        messagingSenderId: "926924779977",
+        appId: "1:926924779977:web:8e96e6ac385207b7733818",
+        measurementId: "G-LVRRBBLBJM"
     };
     const app = initializeApp(firebaseConfig);
     const messaging = getMessaging(app);
@@ -24,7 +24,7 @@
                     .register("/firebase-messaging-sw.js");
             }
             navigator.serviceWorker.getRegistration().then(async (reg) => {
-                let token = await getToken(messaging, {vapidKey: "{{ $config['vapid'] }}"});
+                let token = await getToken(messaging, {vapidKey: "BPHPZpp9RcdvwFWmR_1AmfB7cosza4nI8UPDo1JNczUZTqmHczItpBixqx8grWv4VjUqvgY1QgA_De7ceHqVACQ"});
                 if(token){
                     Livewire.dispatch('fcm-token', {token: token})
                 }

@@ -78,18 +78,6 @@ class FcmToken extends Component
 
     public function render()
     {
-        return view('livewire.fcm-token', [
-            "config" => [
-                "apiKey" => config('filament-fcm.project.apiKey'),
-                "authDomain" => config('filament-fcm.project.authDomain'),
-                "databaseURL" => config('filament-fcm.project.databaseURL'),
-                "projectId" => config('filament-fcm.project.projectId'),
-                "storageBucket" => config('filament-fcm.project.storageBucket'),
-                "messagingSenderId" => config('filament-fcm.project.messagingSenderId'),
-                "appId" => config('filament-fcm.project.appId'),
-                "measurementId" => config('filament-fcm.project.measurementId'),
-                "vapid" => config('filament-fcm.vapid'),
-            ]
-        ]);
+        return view('livewire.fcm-token');
     }
 }
