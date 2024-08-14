@@ -10,14 +10,14 @@ try
     // your app's Firebase config object.
     // https://firebase.google.com/docs/web/setup#config-object
     firebase.initializeApp({
-        apiKey: "",
-        authDomain: "",
-        databaseURL: "",
-        projectId: "",
-        storageBucket: "",
-        messagingSenderId: "",
-        appId: "",
-        measurementId: ""
+        apiKey: "AIzaSyBHM0qQcP5p47u7eTKnKCnyzNP6d1eQslQ",
+        authDomain: "x1io-309101.firebaseapp.com",
+        databaseURL: "https://x1io-309101-default-rtdb.firebaseio.com",
+        projectId: "x1io-309101",
+        storageBucket: "x1io-309101.appspot.com",
+        messagingSenderId: "926924779977",
+        appId: "1:926924779977:web:8e96e6ac385207b7733818",
+        measurementId: "G-LVRRBBLBJM"
     });
 
 
