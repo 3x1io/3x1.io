@@ -57,7 +57,7 @@
     @stack('css')
     @include('cms::parts.pwa')
 </head>
-<body class="antialiased text-gray-900 dark:text-slate-300 tracking-tight bg-white dark:bg-slate-950 ibm-plex-sans-arabic-medium">
+<body class="hidden app antialiased text-gray-900 dark:text-slate-300 tracking-tight bg-white dark:bg-slate-950 ibm-plex-sans-arabic-medium">
     @include('cms::parts.header')
     <main>
         @yield('body')
@@ -67,6 +67,12 @@
 
     @vite('resources/js/app.js')
     @stack('js')
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>    <script>
+        $(function(){  // $(document).ready shorthand
+            $('.app').fadeIn('slow');
+        });
+    </script>
 
     <script type="module">
         if(window.localStorage.getItem('theme') && window.localStorage.getItem('theme') === 'dark') {
