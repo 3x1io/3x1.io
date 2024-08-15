@@ -20,7 +20,7 @@
     transition
     duration-200
 ">
-    <div class="flex flex-col justify-center items-center rtl:ml-2 rtl:sm:ml-3 mr-2 sm:mr-3 my-2">
+    <div class="flex flex-col justify-center items-center">
         @if($image)
             <img src="{{ $image }}" class="rounded-lg w-32">
         @elseif($icon)
