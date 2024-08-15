@@ -14,7 +14,7 @@
                     </span>
                 </h1>
             </header>
-            <section data-nosnippet="" class="grid gap-4 sm:gap-12 grid-cols-1 lg:grid-cols-2 mx-4 my-12 dark:text-white">
+            <section data-nosnippet="" class="grid grid-cols-1 mx-6 my-12 dark:text-white">
                 @foreach($openSources as $item)
                     <x-cms-open-source-card
                         :tags="$item->categories()->pluck('name')->toArray()"
@@ -23,6 +23,12 @@
                         icon="heroicon-s-users"
                         label="{{ $item->title }}"
                         description="{{ $item->short_description }}"
+                        :meta="[
+                             'lang' => $item->meta('github_language'),
+                             'forks' => $item->meta('github_forks'),
+                             'starts' => $item->meta('github_starts'),
+                             'issues' => $item->meta('github_open_issues'),
+                        ]"
                     />
                 @endforeach
             </section>
