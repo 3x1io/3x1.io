@@ -22,7 +22,7 @@
 ">
     <div class="flex flex-col justify-center items-center">
         @if($image)
-            <img src="{{ $image }}" class="rounded-lg w-32">
+            <img src="{{ $image }}" class="rounded-lg object-center object-cover" style="width: 128px; height: 128px;">
         @elseif($icon)
             <div style="width: 128px; height: 128px;" class="flex justify-center items-center flex-col border border-gray-700 rounded-lg">
                 <x-icon name="{{ $icon }}" class="w-12 h-12 text-primary-600 dark:text-primary-400" />
