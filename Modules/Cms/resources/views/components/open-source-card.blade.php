@@ -1,4 +1,4 @@
-<div class="flex flex-col justify-start border-b border-gray-200 dark:border-gray-900 py-4">
+<div class="flex flex-col justify-start py-4 text-black dark:text-gray-200">
     <div>
         <a href="{{ $url }}" class="text-main underline font-bold text-lg">
             {{ $label }}
