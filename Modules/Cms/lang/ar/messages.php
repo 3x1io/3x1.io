@@ -29,6 +29,7 @@ return [
         "label" => "خدماتي",
         "title" => "كيف يمكنني",
         "sub" => "خدمتك؟",
+        "more" => "اقرأ المزيد"
     ],
     "open-source" => [
         "label" => "مفتوح المصدر",
@@ -54,5 +55,20 @@ return [
             "reddit" => "شارك على ريديت",
             "pinterest" => "شارك على بينتيريست",
         ]
+    ],
+    "filters" => [
+        "search" => "بحث",
+        "search-placeholder" => "ماذا تبحث عن؟",
+        "sort" => "ترتيب",
+        "sort-select" => [
+            "popular" => "شائع",
+            "recent" => "حديث",
+            "alphabetical" => "أبجدي",
+        ]
+    ],
+    "empty" => [
+        "no" => "لا يوجد",
+        "found" => "تم العثور عليه",
+        "description" => "عذرًا، لم يتطابق بحثك مع أي شيء"
     ]
 ];

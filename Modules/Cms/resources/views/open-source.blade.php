@@ -10,25 +10,18 @@
                 <h1 class="text-center text-4xl md:text-6xl font-bold leading-tighter tracking-tighter mb-8 md:mb-16 font-heading">
                     {{ trans('cms::messages.open-source.title') }}
                     <span class="bg-clip-text text-transparent bg-gradient-to-r from-main to-secondary pr-[0.025em] mr-[-0.025em]">
-                        {{ trans('cms::messages.open-source.sub') }}
+                        {{ request()->has('category') ? \TomatoPHP\FilamentCms\Models\Category::query()->where('slug', request()->get('category'))->first()?->name : trans('cms::messages.open-source.sub') }}
                     </span>
                 </h1>
             </header>
-            <section data-nosnippet="" class="grid grid-cols-1 mx-6 my-12 dark:text-white divide-y divide-gray-200 dark:divide-gray-900">
+            <div class="mx-6">
+                <x-cms-filter-toolbar />
+            </div>
+            @if(count($openSources))
+            <section data-nosnippet="" class="grid grid-cols-1 mx-6 my-4 dark:text-white divide-y divide-gray-200 dark:divide-gray-900">
                 @foreach($openSources as $item)
                     <x-cms-open-source-card
-                        :tags="$item->categories()->pluck('name')->toArray()"
-                        image="{{ $item->getFirstMediaUrl('feature_image') }}"
-                        url="open-source/{{ $item->slug }}"
-                        icon="heroicon-s-users"
-                        label="{{ $item->title }}"
-                        description="{{ $item->short_description }}"
-                        :meta="[
-                             'lang' => $item->meta('github_language'),
-                             'forks' => $item->meta('github_forks'),
-                             'starts' => $item->meta('github_starts'),
-                             'issues' => $item->meta('github_open_issues'),
-                        ]"
+                        :post="$item"
                     />
                 @endforeach
             </section>
@@ -38,6 +31,9 @@
                     {!! $openSources->links() !!}
                 </div>
             </div>
+            @else
+                <x-cms-empty-state :name="trans('cms::messages.open-source.label')"/>
+            @endif
         </section>
     </div>
 @endsection

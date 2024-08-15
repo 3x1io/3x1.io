@@ -4,6 +4,7 @@ namespace Modules\Cms\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Contracts\Support\Renderable;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use TomatoPHP\FilamentCms\Models\Post;
 
@@ -34,13 +35,45 @@ class HomeController extends Controller
         ]);
     }
 
+    private function applyFilter(Builder $query,string $key='category'): Builder
+    {
+        if(request()->has('search') && !empty('search')){
+            $query->where('title', 'like', '%'.request()->search.'%');
+        }
+
+        if(request()->has('sort') && !empty('sort')){
+            if(request()->get('sort') === 'popular'){
+                $query->orderBy('views', 'desc');
+            }
+            elseif (request()->get('sort') === 'recent'){
+                $query->orderBy('created_at', 'desc');
+            }
+            elseif (request()->get('sort') === 'alphabetical'){
+                $query->orderBy('title');
+            }
+            else {
+                $query->inRandomOrder();
+            }
+        }
+
+        if(request()->has($key) && !empty($key)){
+            $query->whereHas('categories', function ($query) use ($key){
+                $query->where('slug', request()->get($key));
+            });
+        }
+
+        return $query;
+    }
+
     public function openSource(Request $request)
     {
         $openSources = Post::query()
             ->where('type', 'open-source')
-            ->where('is_published', 1)
-            ->orderBy('created_at', 'desc')
-            ->paginate(12);
+            ->where('is_published', 1);
+
+        $openSources = $this->applyFilter($openSources);
+
+        $openSources = $openSources->paginate(12);
         return view('cms::open-source', [
             'openSources' => $openSources
         ]);
@@ -61,9 +94,11 @@ class HomeController extends Controller
     {
         $portfolios = Post::query()
             ->where('type', 'portfolio')
-            ->where('is_published', 1)
-            ->orderBy('created_at', 'desc')
-            ->paginate(12);
+            ->where('is_published', 1);
+
+        $portfolios = $this->applyFilter($portfolios);
+
+        $portfolios = $portfolios->paginate(12);
         return view('cms::portfolios', [
             'portfolios' => $portfolios
         ]);
@@ -102,9 +137,12 @@ class HomeController extends Controller
     {
         $posts = Post::query()
             ->where('type', 'post')
-            ->where('is_published', 1)
-            ->orderBy('created_at', 'desc')
-            ->paginate(12);
+            ->where('is_published', 1);
+
+        $posts = $this->applyFilter($posts);
+
+        $posts = $posts->paginate(12);
+
         return view('cms::blog', [
             "posts" => $posts
         ]);
@@ -134,10 +172,5 @@ class HomeController extends Controller
         else {
             abort(404);
         }
-    }
-
-    public function send(Request $request)
-    {
-        dd($request);
     }
 }

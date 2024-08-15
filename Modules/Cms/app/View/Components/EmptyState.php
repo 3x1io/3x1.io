@@ -7,13 +7,13 @@ use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 use TomatoPHP\FilamentCms\Models\Post;
 
-class OpenSourceCard extends Component
+class EmptyState extends Component
 {
     /**
      * Create a new component instance.
      */
     public function __construct(
-        public Post $post,
+        public string $name,
     )
     {
         //
@@ -24,6 +24,6 @@ class OpenSourceCard extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('cms::components.open-source-card');
+        return view('cms::components.empty');
     }
 }

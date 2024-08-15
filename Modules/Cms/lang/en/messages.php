@@ -29,6 +29,7 @@ return [
         "label" => "Services",
         "title" => "How Can I Serve",
         "sub" => "You?",
+        "more" => "Read More"
     ],
     "open-source" => [
         "label" => "Open Source",
@@ -54,5 +55,20 @@ return [
             "reddit" => "Share To Reddit",
             "pinterest" => "Share To Pinterest",
         ]
+    ],
+    "filters" => [
+        "search" => "Search",
+        "search-placeholder" => "What are you looking for?",
+        "sort" => "Sort",
+        "sort-select" => [
+            "popular" => "Popular",
+            "recent" => "Recent",
+            "alphabetical" => "Alphabetical",
+        ]
+    ],
+    "empty" => [
+        "no" => "No",
+        "found" => "Found",
+        "description" => "Sorry Your Filter Did Not Match Any"
     ]
 ];

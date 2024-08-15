@@ -21,7 +21,7 @@
                 {!! $description !!}
             </p>
 
-            <p class="mt-8 font-bold text-black dark:text-white">Read more</p>
+            <p class="mt-8 font-bold text-black dark:text-white">{{ trans('cms::messages.services.more') }}</p>
         </div>
     </div>
 </a>

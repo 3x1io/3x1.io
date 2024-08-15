@@ -5,6 +5,9 @@ namespace Modules\Cms\Providers;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 use Modules\Cms\View\Components\BlogCard;
+use Modules\Cms\View\Components\CategoryToolbar;
+use Modules\Cms\View\Components\EmptyState;
+use Modules\Cms\View\Components\FilterToolbar;
 use Modules\Cms\View\Components\MainButton;
 use Modules\Cms\View\Components\MenuItem;
 use Modules\Cms\View\Components\OpenSourceCard;
@@ -43,6 +46,8 @@ class CmsServiceProvider extends ServiceProvider
             PortfolioCard::class,
             SocialShare::class,
             ServiceCard::class,
+            FilterToolbar::class,
+            EmptyState::class
         ]);
     }
 
