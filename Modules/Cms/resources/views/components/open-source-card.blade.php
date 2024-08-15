@@ -13,7 +13,7 @@
             </div>
         </div>
     </div>
-    <div class="flex justify-start gap-2 mt-2">
+    <div class="flex justify-start gap-2">
         <div class="font-bold">{{ $meta['lang'] }}</div>
         <div class="font-bold text-2xl" style="line-height: 0.5;">.</div>
         <div class="font-sm flex justify-start gap-2">
