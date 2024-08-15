@@ -28,7 +28,7 @@
             </section>
 
             <div>
-                <div class="flex flex-col justify-center items-center">
+                <div class="flex flex-col justify-center items-center my-4">
                     {!! $openSources->links() !!}
                 </div>
             </div>

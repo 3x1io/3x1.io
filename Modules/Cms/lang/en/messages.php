@@ -9,6 +9,10 @@ return [
             "open-source" => "Open Source",
         ]
     ],
+    "about" => [
+        "title" => "My Skills",
+        "description" => "as a developer, designer, marketer i have a lot of skills"
+    ],
     "blog" => [
         "label" => "Blog",
         "title" => "Let's Learn",
