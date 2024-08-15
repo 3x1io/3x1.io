@@ -18,10 +18,10 @@
         <div class="font-bold text-2xl" style="line-height: 0.5;">.</div>
         <div class="font-sm flex justify-start gap-2">
             <div class="flex flex-col justify-center items-center">
-                <x-icon name="bx-git-repo-forked" class="w-4 h-4 text-success-500"/>
+                <x-icon name="bxs-circle" class="w-4 h-4 text-danger-500"/>
             </div>
             <div>
-                {{ $meta['issues'] }}
+                {{ $meta['issues'] ?? 0 }}
             </div>
         </div>
         <div class="font-bold text-2xl" style="line-height: 0.5;">.</div>
