@@ -9,7 +9,12 @@
                 @endif
             </ul>
             <div class="hidden md:inline text-xs text-gray-700 mr-4 dark:text-slate-400">
-                <q>{{ trans('cms::messages.footer.copyright') }}</q>
+                <div>
+                    <q>{{ trans('cms::messages.footer.copyright') }}</q>
+                </div>
+                <div>
+                    <p>©{{ trans('cms::messages.footer.open-source') }} <a class="text-main" href="https://github.com/3x1io/3x1.io/blob/master/LICENSE.md" target="_blank">{{ trans('cms::messages.footer.mit') }}</a> {{ trans('cms::messages.footer.for') }} <a href="https://www.github.com/3x1io/3x1.io" target="_blank" class="text-main">{{ trans('cms::messages.footer.link') }}</a> </p>
+                </div>
             </div>
         </div>
     </div>

@@ -42,7 +42,11 @@ return [
         "sub" => "Businesses"
     ],
     "footer" => [
-        "copyright" => "To change the world, you need to believe in change."
+        "copyright" => "To change the world, you need to believe in change.",
+        "open-source" => "this website is open-source project you can use it under",
+        "mit" => "MIT LICENSE",
+        "for" => ", from this",
+        "link" => "link",
     ],
     "share" => [
         "title" => "Share To Social Networks",
