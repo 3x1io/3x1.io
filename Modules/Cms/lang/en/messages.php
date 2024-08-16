@@ -42,7 +42,7 @@ return [
         "sub" => "Businesses"
     ],
     "footer" => [
-        "copyright" => "To change the world you need to belief on change"
+        "copyright" => "To change the world, you need to believe in change."
     ],
     "share" => [
         "title" => "Share To Social Networks",
