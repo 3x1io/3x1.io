@@ -21,6 +21,7 @@ use Illuminate\View\Middleware\ShareErrorsFromSession;
 use TomatoPHP\FilamentAccounts\FilamentAccountsPlugin;
 use TomatoPHP\FilamentAlerts\FilamentAlertsPlugin;
 use TomatoPHP\FilamentCms\FilamentCMSPlugin;
+use TomatoPHP\FilamentInvoices\FilamentInvoicesPlugin;
 use TomatoPHP\FilamentMenus\FilamentMenusPlugin;
 use TomatoPHP\FilamentPlugins\FilamentPluginsPlugin;
 use TomatoPHP\FilamentPWA\FilamentPWAPlugin;
@@ -97,6 +98,7 @@ class AdminPanelProvider extends PanelProvider
                     ->useSettingsHub(),
                 FilamentSettingsHubPlugin::make(),
                 FilamentPWAPlugin::make(),
+                FilamentInvoicesPlugin::make(),
             ]);
     }
 }

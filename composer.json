@@ -18,6 +18,7 @@
         "tomatophp/filament-cms": "^1.0",
         "tomatophp/filament-discord": "^1.0",
         "tomatophp/filament-fcm": "^1.0",
+        "tomatophp/filament-invoices": "^1.0",
         "tomatophp/filament-menus": "^1.0",
         "tomatophp/filament-plugins": "^1.0",
         "tomatophp/filament-pwa": "^1.0",
