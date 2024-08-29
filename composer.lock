@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7c47b952a40e6b9a7644586fd77f9235",
+    "content-hash": "a8c3fa63346620f444b84210074a2068",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -12386,6 +12386,71 @@
                 }
             ],
             "time": "2024-07-18T11:56:31+00:00"
+        },
+        {
+            "name": "tomatophp/filament-notes",
+            "version": "v1.0.12",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tomatophp/filament-notes.git",
+                "reference": "013b0bbdb36939585bacb38f620db52a0df1b215"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tomatophp/filament-notes/zipball/013b0bbdb36939585bacb38f620db52a0df1b215",
+                "reference": "013b0bbdb36939585bacb38f620db52a0df1b215",
+                "shasum": ""
+            },
+            "require": {
+                "filament/filament": "^3.0",
+                "php": "^8.1|^8.2",
+                "tomatophp/console-helpers": "^1.1",
+                "tomatophp/filament-icons": "^1.1",
+                "tomatophp/filament-types": "^1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "TomatoPHP\\FilamentNotes\\FilamentNotesServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "TomatoPHP\\FilamentNotes\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fady Mondy",
+                    "email": "info@3x1.io"
+                }
+            ],
+            "description": "Add Sticky Notes to your FilamentPHP dashboard with tons of options and style",
+            "keywords": [
+                "filament",
+                "laravel",
+                "notes",
+                "php",
+                "sticky",
+                "widget"
+            ],
+            "support": {
+                "issues": "https://github.com/tomatophp/filament-notes/issues",
+                "source": "https://github.com/tomatophp/filament-notes/tree/v1.0.12"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/3x1io",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-08-14T15:05:16+00:00"
         },
         {
             "name": "tomatophp/filament-plugins",

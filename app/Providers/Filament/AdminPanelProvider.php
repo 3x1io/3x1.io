@@ -23,6 +23,7 @@ use TomatoPHP\FilamentAlerts\FilamentAlertsPlugin;
 use TomatoPHP\FilamentCms\FilamentCMSPlugin;
 use TomatoPHP\FilamentInvoices\FilamentInvoicesPlugin;
 use TomatoPHP\FilamentMenus\FilamentMenusPlugin;
+use TomatoPHP\FilamentNotes\FilamentNotesPlugin;
 use TomatoPHP\FilamentPlugins\FilamentPluginsPlugin;
 use TomatoPHP\FilamentPWA\FilamentPWAPlugin;
 use TomatoPHP\FilamentSettingsHub\FilamentSettingsHubPlugin;
@@ -78,19 +79,7 @@ class AdminPanelProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
             ])
-            ->plugins([
-                FilamentUsersPlugin::make(),
-                FilamentTranslationsPlugin::make()
-                    ->allowGoogleTranslateScan(),
-                FilamentTranslationsSwitcherPlugin::make(),
-                FilamentCMSPlugin::make()
-                    ->allowYoutubeImport()
-                    ->allowBehanceImport()
-                    ->usePageBuilder()
-                    ->useThemeManager()
-                    ->useFormBuilder(),
-                FilamentPluginsPlugin::make(),
-                FilamentTypesPlugin::make(),
+            ->plugin(
                 FilamentAccountsPlugin::make()
                     ->useTypes()
                     ->canLogin()
@@ -100,9 +89,31 @@ class AdminPanelProvider extends PanelProvider
                     ->useContactUs()
                     ->useLoginBy()
                     ->useAvatar(),
-                FilamentMenusPlugin::make(),
+            )
+            ->plugin(
+                FilamentCMSPlugin::make()
+                    ->allowYoutubeImport()
+                    ->allowBehanceImport()
+                    ->usePageBuilder()
+                    ->useThemeManager()
+                    ->useFormBuilder(),
+            )
+            ->plugin(
                 FilamentAlertsPlugin::make()
                     ->useSettingsHub(),
+            )
+            ->plugin(
+                FilamentNotesPlugin::make()
+                    ->useNotification()
+                    ->useGroups()
+                    ->useShareLink()
+                    ->useCheckList()
+                    ->useUserAccess()
+            )
+            ->plugins([
+                FilamentUsersPlugin::make(),
+                FilamentTranslationsSwitcherPlugin::make(),
+                FilamentMenusPlugin::make(),
                 FilamentSettingsHubPlugin::make(),
                 FilamentPWAPlugin::make(),
                 FilamentInvoicesPlugin::make(),
